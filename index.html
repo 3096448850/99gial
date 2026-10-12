@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>个人信息</title>
+    <!-- 引入二维码js库 -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f5f7fa;
+            font-family: "Microsoft Yahei", sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .card {
+            background: #ffffff;
+            padding: 60px 80px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .name {
+            font-size: 42px;
+            color: #222;
+            margin-bottom: 20px;
+        }
+        .id {
+            font-size: 28px;
+            color: #444;
+        }
+        .qr-box{
+            text-align:center;
+        }
+        .tip{
+            margin-top:12px;
+            color:#666;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="name">姓名：张磊</div>
+        <div class="id">学号：240600543</div>
+    </div>
+
+    <div class="qr-box">
+        <div id="qrcode"></div>
+        <div class="tip">扫码查看个人信息</div>
+    </div>
+
+<script>
+// 二维码内容：直接写你的文本信息（不用搭建网站，扫码手机直接显示文字）
+const qrText = "姓名：张磊\n学号：240600543";
+new QRCode(document.getElementById("qrcode"), {
+  text: qrText,
+  width: 220,
+  height: 220,
+  colorDark : "#000000",
+  colorLight : "#ffffff",
+  correctLevel : QRCode.CorrectLevel.H
+});
+</script>
+</body>
+</html>
